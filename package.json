@@ -1,0 +1,25 @@
+{
+    "name"         : "node-red-contrib-node-list",
+    "version"      : "0.0.1",
+    "description"  : "A Node Red node to list all available nodes",
+    "dependencies": {
+    },
+    "author": {
+        "name": "Bart Butenaers"
+    },
+    "license": "Apache-2.0",
+    "keywords": [ "node-red", "list", "nodes", "tabs", "tabsheets" ],
+    "bugs": {
+        "url": "https://github.com/bartbutenaers/node-red-contrib-node-list/issues"
+    },
+    "homepage": "https://github.com/bartbutenaers/node-red-contrib-node-list",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bartbutenaers/node-red-contrib-node-list.git"
+    },
+    "node-red"     : {
+        "nodes": {
+            "node-list": "node_list.js"
+        }
+    }
+}

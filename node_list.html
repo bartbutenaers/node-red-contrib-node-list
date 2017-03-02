@@ -1,0 +1,53 @@
+<script type="text/x-red" data-template-name="node-list">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-mainfilter"><i class="fa fa-filter"></i> Category</label>
+        <select id="node-input-mainfilter">
+           <option value="nods">Nodes</option>
+           <option value="tabs">Tabsheets</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-typefilter"><i class="fa fa-filter"></i> Type filter</label>
+        <input type="text" id="node-input-typefilter" placeholder="Type">
+    </div>
+    <div class="form-row">
+        <label for="node-input-namefilter"><i class="fa fa-filter"></i> Name filter</label>
+        <input type="text" id="node-input-namefilter" placeholder="Type">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="node-list">
+    <p>A node to list all available nodes in the flows.</p>
+    <p><strong>Category:</strong><br/>
+    Specify whether tabsheets or real nodes have to be listed.
+    <p><strong>Type:</strong><br/>
+    Optionally a regular expression can be specified, to filter by type.
+    <p><strong>Name:</strong><br/>
+    Optionally a regular expression can be specified, to filter by name (for nodes) or label (for tabsheets).
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType("node-list", {
+      category: "function",
+      defaults: {
+          name: {value:""},
+          mainfilter: {value:"nods"},
+          typefilter: {value:""},
+          namefilter: {value:""},
+      },
+      color:"#e2d96e",
+      inputs: 1,
+      outputs: 1,
+      icon: "list.png",
+      label: function() {
+          return this.name || "node-list";
+      },
+      labelStyle: function() {
+          return this.name ? "node_label_italic" : "";
+      },
+    });
+</script>
